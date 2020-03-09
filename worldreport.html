@@ -1,0 +1,2866 @@
+<!DOCTYPE html>
+<html
+  xmlns:mso="urn:schemas-microsoft-com:office:office"
+  xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+>
+  <head>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101744992-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-101744992-2');
+    </script>  -->
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-W72V5QF");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>DOF World Report</title>
+    <link rel="stylesheet" href="css/jvectormap.css" />
+    <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #333;
+        margin: 0 auto;
+        /* background: #F6F6FA; */
+        background: rgb(0, 23, 43); /* Old browsers */
+        background: -moz-radial-gradient(
+          center,
+          ellipse cover,
+          rgba(0, 100, 183, 1) 0%,
+          rgba(0, 23, 43, 1) 100%
+        ); /* FF3.6-15 */
+        background: -webkit-radial-gradient(
+          center,
+          ellipse cover,
+          rgba(0, 100, 183, 1) 0%,
+          rgba(0, 23, 43, 1) 100%
+        ); /* Chrome10-25,Safari5.1-6 */
+        background: radial-gradient(
+          ellipse at center,
+          rgba(0, 100, 183, 1) 0%,
+          rgba(0, 23, 43, 1) 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0064b7', endColorstr='#00172b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      }
+
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      h1 {
+        font-size: 2.6em;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+      }
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Firefox < 16 */
+      @-moz-keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Safari, Chrome and Opera > 12.1 */
+      @-webkit-keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Internet Explorer */
+      @-ms-keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Opera < 12.1 */
+      @-o-keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      header {
+        position: absolute;
+        z-index: 1;
+        padding: 20px;
+      }
+      header:hover {
+      }
+
+      #shadowbox {
+        height: 100vh;
+        width: 100vw;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 10;
+        position: fixed;
+        color: white;
+        text-align: center;
+        display: table;
+      }
+
+      #shadowbox div {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 3em;
+        font-weight: bold;
+      }
+
+      #lightbox {
+        width: 80%;
+        height: 80%;
+        z-index: 11;
+        position: fixed;
+        bottom: -20%;
+        left: 10%;
+        display: none;
+        transition: bottom 0.5s ease;
+      }
+
+      #lightbox.animate {
+        bottom: 0%;
+      }
+
+      #lightbox.animate #lightboxTitle {
+        transform: scale(1);
+      }
+
+      #closelightbox {
+        z-index: 11;
+        position: absolute;
+        color: white;
+        right: 0;
+        top: -48px;
+        font-size: 2.5em;
+        cursor: pointer;
+        transition: color 0.2s ease;
+      }
+
+      #closelightbox:hover {
+        color: #eee;
+      }
+
+      .lightbox-container {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e8effc+0,fcfcfc+100&1+0,0.68+100 */
+        background: -moz-linear-gradient(
+          top,
+          rgba(232, 239, 252, 1) 30%,
+          rgba(252, 252, 252, 0.5) 100%
+        ); /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+          top,
+          rgba(232, 239, 252, 1) 30%,
+          rgba(252, 252, 252, 0.5) 100%
+        ); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(
+          to bottom,
+          rgba(232, 239, 252, 1) 30%,
+          rgba(252, 252, 252, 0.5) 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8effc', endColorstr='#adfcfcfc',GradientType=0 ); /* IE6-9 */
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      #lightboxTitle {
+        top: -60px;
+        position: absolute;
+        font-size: 3em;
+        color: white;
+        transform: scale(1.3);
+        transition: transform 0.6s ease;
+      }
+
+      #lightboxBody {
+        padding: 30px;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #loadProgress {
+        font-size: 0.4em;
+        font-weight: normal;
+      }
+
+      #page-title {
+        display: inline-block;
+        letter-spacing: -1px;
+        padding-left: 10px;
+        vertical-align: middle;
+        text-shadow: 0px 3px 3px rgba(200, 200, 200, 0.4);
+        margin: 0;
+        transition: all 0.7s ease;
+      }
+
+      #page-title.settings {
+        color: white;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+      }
+
+      .header-logo {
+        width: 270px;
+        height: 72px;
+        background: url("img/VF_ADAM-white.png") no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+        background-size: contain;
+      }
+
+      .jvectormap-container {
+        -webkit-backface-visibility: hidden;
+        transition: transform 0.1s ease;
+      }
+      /*
+      .jvectormap-marker {
+
+      } */
+
+      #world-map {
+        overflow: hidden;
+        transform: scale(1);
+        transition: transform 1s ease, background 0.2s ease, opacity 0.3s ease;
+        /* background: #F6F6FA; */
+        z-index: 0;
+        opacity: 1;
+        /* transform-origin: left; */
+      }
+
+      #world-map.inset {
+        transform: scale(0);
+        opacity: 0;
+        /* background: none; */
+      }
+
+      .date-slider {
+        position: absolute;
+        height: 90px;
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding-right: 300px;
+        padding-left: 100px;
+      }
+
+      #orderSummaryBox {
+        position: absolute;
+        color: white;
+        z-index: 1;
+        max-width: 360px;
+        border-radius: 5px;
+        background: rgba(0, 41, 75, 0.7);
+        padding: 10px;
+        right: 40px;
+        top: 30%;
+        box-shadow: 0 8px 10px rgba(255, 255, 255, 0.1);
+        overflow-wrap: break-word;
+      }
+
+      #orderSummaryBox .heading {
+        background: rgba(255, 255, 255, 0.92);
+        padding: 5px 10px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        color: #002e54;
+      }
+
+      #regionStatsBox {
+        z-index: 1;
+        position: absolute;
+        padding-left: 20px;
+        bottom: 130px;
+        color: white;
+        max-width: 30%;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#002e54+0,7db9e8+100&1+0,0+100 */
+        background: -moz-linear-gradient(
+          left,
+          rgba(0, 46, 84, 1) 0%,
+          rgba(125, 185, 232, 0) 100%
+        ); /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+          left,
+          rgba(0, 46, 84, 1) 0%,
+          rgba(125, 185, 232, 0) 100%
+        ); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(
+          to right,
+          rgba(0, 46, 84, 1) 0%,
+          rgba(125, 185, 232, 0) 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002e54', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 */
+      }
+
+      #regionStatsBox ul {
+        clear: both;
+        padding-left: 0;
+        padding-top: 10px;
+      }
+
+      #other-button .info {
+        font-family: "Font Awesome 5 Free";
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        font-size: 1.4em;
+        color: #c0a324;
+        font-weight: 900;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      #other-button .info:hover {
+        color: #dfbc23;
+      }
+
+      .orderTable {
+        padding: 20px 0 300px;
+      }
+
+      .orderTable td {
+        padding: 5px;
+        min-width: 70px;
+        vertical-align: top;
+      }
+
+      .orderTable td a {
+        color: rgb(1, 136, 156);
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+
+      .orderTable thead {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      .region-button {
+        list-style: none;
+        border-radius: 20px;
+        padding: 5px 15px;
+        margin: 5px;
+        width: 100%;
+        cursor: pointer;
+        transition: background 0.1s ease, color 0.1s ease, opacity 0.2s ease;
+        color: #ddd;
+        font-size: 1.1em;
+        position: relative;
+        opacity: 1;
+      }
+
+      .region-button:hover {
+        color: white;
+      }
+
+      .region-list .table-qty {
+        text-align: right;
+        font-weight: bold;
+        width: 50px;
+        display: inline-block;
+        font-size: 1.5em;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+      .padded {
+        padding: 10px;
+      }
+
+      .float-left {
+        float: left;
+      }
+
+      dl {
+        padding: 0 10px;
+      }
+
+      dt {
+        font-weight: bold;
+        margin-top: 5px;
+      }
+
+      dd {
+        margin-left: 15px;
+      }
+
+      .summary-stats {
+        position: absolute;
+        right: 20px;
+        top: 145px;
+        z-index: 1;
+        font-size: 1.3em;
+      }
+
+      .summary-stats > i {
+        color: #ccc;
+        transition: color 0.2s ease;
+      }
+
+      .summary-stats > i:hover {
+        color: #999;
+      }
+
+      #close-box {
+        position: absolute;
+        z-index: 10;
+        right: -10px;
+        top: -10px;
+        font-size: 1.5em;
+        cursor: pointer;
+        background: rgba(0, 44, 81, 0.7);
+        border-radius: 100%;
+      }
+
+      .button {
+        cursor: pointer;
+        transition: background 0.1s ease, color 0.1s ease;
+        outline: none;
+        border: 1px solid rgb(167, 167, 167);
+        border-radius: 5px;
+        background: white;
+        padding: 5px;
+        margin-left: 5px;
+        color: rgb(167, 167, 167);
+      }
+
+      .button.ghost {
+        background: none;
+      }
+
+      .all-regions {
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+
+      .button:hover {
+        background: rgb(167, 167, 167);
+        color: white;
+      }
+
+      .date-buttons {
+        position: absolute;
+        bottom: 40px;
+        right: 15px;
+        z-index: 1;
+      }
+
+      .channel-toggle {
+        position: absolute;
+        z-index: 5;
+        color: white;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgba(0, 176, 202, 0.45);
+        border-radius: 20px;
+        top: 120px;
+        left: 60px;
+        overflow: hidden;
+        background: rgba(0, 37, 68, 0.54);
+      }
+
+      .channel-toggle li {
+        padding: 8px;
+        display: inline-block;
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: background 0.2s ease;
+        width: 50px;
+        text-align: center;
+      }
+
+      .channel-toggle li:hover,
+      .region-button:hover {
+        background: rgba(0, 175, 202, 0.3);
+      }
+
+      .channel-toggle li:first-child {
+        border: none;
+      }
+
+      .channel-toggle li.active {
+        background: rgba(0, 176, 202, 0.7);
+        font-weight: bold;
+      }
+
+      .region-list.selection .region-button {
+        opacity: 0.4;
+      }
+      .region-list.selection .region-button .table-qty {
+        opacity: 0;
+      }
+
+      .region-button.active:after {
+        content: "\f058";
+        font-family: "Font Awesome 5 Free";
+        position: absolute;
+        top: 8px;
+        right: 9px;
+        font-size: 1.3em;
+        color: #24b9c0;
+      }
+
+      .region-button.active {
+        background: #0088a3;
+        color: white;
+        opacity: 1 !important;
+      }
+
+      .region-button.active .table-qty {
+        opacity: 1 !important;
+      }
+
+      .date-buttons .button:hover {
+        background: #f0f6ff;
+        border: #00b0ca 1px solid;
+        color: #00b0ca;
+      }
+
+      .date-buttons .button.active {
+        background: #00b0ca;
+        border: #00b0ca 1px solid;
+        color: white;
+      }
+
+      h2.product {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1em;
+      }
+
+      .chart-container {
+        height: 65%;
+        max-height: 65%;
+        width: 75%;
+        right: 40px;
+        position: absolute;
+        bottom: 100px;
+        transition: opacity 0.5s ease, bottom 1s ease;
+        display: none;
+      }
+
+      .chart-container.inset {
+        bottom: -200px;
+        opacity: 0;
+      }
+
+      .product-stats {
+        position: absolute;
+        z-index: 1;
+        text-align: center;
+        top: 30px;
+        right: 0;
+        left: 0;
+        font-size: 0.8em;
+        padding-left: 90px;
+      }
+
+      .product-stats.selection li {
+        opacity: 0.4;
+        transition: opacity 0.2s ease;
+      }
+
+      .product-stats.selection li:hover {
+        opacity: 0.7;
+      }
+
+      .all-products {
+        display: inline-block;
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: rgba(0, 45, 83, 0.71);
+        border-radius: 100%;
+        text-align: center;
+        font-size: 0.75em;
+        border: 2px solid #004680;
+        color: #c7c7c7;
+        top: 40px;
+        margin-left: 15px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+
+      .all-products:hover {
+        background: #006b88;
+      }
+
+      .all-products h2 {
+        margin-top: 15px;
+      }
+
+      /* .product-stats.selection li > h1 {
+        opacity: 0;
+      } */
+
+      .color-bar {
+        width: 100%;
+        margin-top: 5px;
+        border-radius: 3px;
+        height: 0px;
+        transition: height 0.3s ease;
+      }
+
+      .trends .color-bar {
+        height: 10px;
+      }
+
+      .color-bar.IPVPNNewProvide {
+        background: rgba(96, 11, 99, 0.8);
+      }
+
+      .color-bar.IPVPNChangeRequest {
+        background: rgba(156, 42, 160, 0.8);
+      }
+
+      .color-bar.DIANewProvide {
+        background: rgba(106, 113, 8, 0.8);
+      }
+
+      .color-bar.DIAChangeRequest {
+        background: rgba(168, 180, 0, 0.8);
+      }
+
+      .color-bar.EWLEVPNChangeRequest {
+        background: rgba(235, 151, 0, 0.8);
+      }
+
+      .color-bar.DENewProvide {
+        background: rgba(254, 203, 0, 0.8);
+      }
+
+      .product-group {
+        color: white;
+        background: rgba(0, 37, 68, 0.54);
+        text-align: CENTER;
+        border-radius: 5px;
+        padding: 2px;
+        overflow: hidden;
+        margin: 5px;
+        display: inline-block;
+        box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+      }
+
+      .product-group > h2 {
+        margin: 0;
+        width: 100%;
+        background: rgba(0, 176, 202, 0.5);
+        color: #ffffff;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-group > h2 .product-dot {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 100%;
+        margin-right: 5px;
+      }
+
+      .product-dot.ipvpn {
+        background: #9c2aa0;
+      }
+
+      .product-dot.dia {
+        background: #a8b400;
+      }
+
+      .product-dot.ewl {
+        background: #eb9700;
+      }
+
+      .product-dot.de {
+        background: #fecb00;
+      }
+
+      .product-stats ul,
+      .product-stats li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .product-stats ul {
+        margin: 10px 0;
+      }
+
+      .product-stats li {
+        display: inline-block;
+        padding: 0 15px;
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        width: 100px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .product-stats li.active {
+        color: #24b9c0;
+        text-shadow: 2px 1px 0px rgba(0, 0, 0, 0.4);
+        opacity: 1 !important;
+      }
+
+      .product-stats li.active > h1 {
+        opacity: 1 !important;
+      }
+
+      .product-stats li.active:after {
+        content: "\f058";
+        font-family: "Font Awesome 5 Free";
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        font-size: 1.5em;
+        color: #24b9c0;
+        font-weight: 900;
+      }
+
+      .product-stats li:first-child {
+        border: none;
+      }
+
+      .product-stats h1 {
+        font-size: 4em;
+      }
+
+      .refresh-info {
+        z-index: 1;
+        right: 10px;
+        font-size: 0.9em;
+        position: absolute;
+        top: 10px;
+        color: #888;
+      }
+
+      .refresh-info i {
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .search-container {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        z-index: 1;
+      }
+      .search-container.hideicon:before {
+        content: "";
+      }
+
+      .id-search-container {
+        height: 25px;
+        overflow: hidden;
+      }
+
+      .hide {
+        opacity: 0;
+      }
+
+      #idSearchResult {
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background: #990000;
+        font-size: 0.8em;
+        padding: 5px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        position: relative;
+        top: -25px;
+        transition: top 1s ease;
+      }
+
+      #idSearchResult.show {
+        top: 0px;
+      }
+
+      #searchInput {
+        outline: none;
+        border: none;
+        border-bottom: 2px solid rgba(0, 76, 140, 0.89);
+        color: white;
+        font-size: 2em;
+        width: 120px;
+        text-align: center;
+        background: rgba(84, 109, 129, 0.71);
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        padding: 7px 5px;
+        font-weight: bold;
+      }
+
+      .search-container:before {
+        content: "\f689";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: #617a90;
+        font-size: 2em;
+        left: 0;
+        right: 0;
+        position: absolute;
+        text-align: center;
+        top: 10px;
+        z-index: -1;
+      }
+
+      .refresh-info i.loading {
+        -webkit-animation: spin 4s linear infinite;
+        -moz-animation: spin 4s linear infinite;
+        animation: spin 4s linear infinite;
+      }
+
+      .refresh-info i:hover {
+        color: #aaa;
+      }
+
+      .irs-handle {
+        cursor: e-resize;
+      }
+
+      @-moz-keyframes spin {
+        100% {
+          -moz-transform: rotate(360deg);
+        }
+      }
+      @-webkit-keyframes spin {
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes spin {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      .irs--round .irs-handle {
+        border-color: #00b0ca;
+      }
+      .irs--round .irs-from,
+      .irs--round .irs-to,
+      .irs--round .irs-single {
+        background-color: #00b0ca;
+      }
+      .irs--round .irs-bar {
+        background-color: #00b0ca;
+      }
+      .irs--round .irs-min,
+      .irs--round .irs-max {
+        color: #666;
+      }
+      .irs--round .irs-line {
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+      }
+      .irs--round .irs-grid-text {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+      }
+    </style>
+
+    <!--[if gte mso 9
+      ]><xml>
+        <mso:CustomDocumentProperties>
+          <mso:_dlc_DocId msdt:dt="string">GTES-34481021-1845</mso:_dlc_DocId>
+          <mso:_dlc_DocIdItemGuid msdt:dt="string"
+            >c092fe8e-35e7-4aa3-9888-2b0c758701b7</mso:_dlc_DocIdItemGuid
+          >
+          <mso:_dlc_DocIdUrl msdt:dt="string"
+            >https://workspace2.vodafone.com/Group/GTES/_layouts/DocIdRedir.aspx?ID=GTES-34481021-1845,
+            GTES-34481021-1845</mso:_dlc_DocIdUrl
+          >
+        </mso:CustomDocumentProperties>
+      </xml><!
+    [endif]-->
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-W72V5QF"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+      <div class="header-logo"></div>
+      <br />
+      <!-- <h1 id="page-title" class="settings">Digital Orders</h1> -->
+    </header>
+    <div id="shadowbox"><div>Loading...</div></div>
+    <div id="lightbox">
+      <h1 id="lightboxTitle">Title</h1>
+      <i id="closelightbox" class="fas fa-times-circle"></i>
+      <div class="lightbox-container">
+        <div id="lightboxBody"></div>
+      </div>
+    </div>
+    <ul class="channel-toggle">
+      <li class="active">All</li>
+      <li class="">Global</li>
+      <li class="">UK</li>
+    </ul>
+    <div class="refresh-info">
+      Data last updated <span id="lastRefreshTime"></span>
+      <i id="refreshButton" class="fas fa-sync-alt" alt="Refresh"></i>
+    </div>
+    <div class="product-stats">
+      <div class="product-group">
+        <h2><span class="product-dot ipvpn"></span> IP-VPN</h2>
+        <ul>
+          <li data-product-type="IPVPNNewProvide" class="product-button">
+            <h1 id="IPVPNNewProvide-qty" class="table-qty"></h1>
+            <h2 class="product">New Provide</h2>
+            <div class="color-bar IPVPNNewProvide"></div>
+          </li>
+          <li data-product-type="IPVPNChangeRequest">
+            <h1 id="IPVPNChangeRequest-qty" class="table-qty"></h1>
+            <h2 class="product">Change Request</h2>
+            <div class="color-bar IPVPNChangeRequest"></div>
+          </li>
+          <!-- <li class="product-button">
+            <h1 id="ipvpnc-qty" class="table-qty"></h1>
+            <h2 class="product">Cease</h2>
+          </li> -->
+        </ul>
+      </div>
+      <div class="product-group">
+        <h2><span class="product-dot dia"></span> DIA</h2>
+        <ul>
+          <li data-product-type="DIANewProvide" class="product-button">
+            <h1 id="DIANewProvide-qty" class="table-qty"></h1>
+            <h2 class="product">New Provide</h2>
+            <div class="color-bar DIANewProvide"></div>
+          </li>
+          <li data-product-type="DIAChangeRequest" class="product-button">
+            <h1 id="DIAChangeRequest-qty" class="table-qty"></h1>
+            <h2 class="product">Change Request</h2>
+            <div class="color-bar DIAChangeRequest"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="product-group">
+        <h2><span class="product-dot ewl"></span>EWL/EVPN</h2>
+        <ul>
+          <li data-product-type="EWLEVPNChangeRequest" class="product-button">
+            <h1 id="EWLEVPNChangeRequest-qty" class="table-qty"></h1>
+            <h2 class="product">Change Request</h2>
+            <div class="color-bar EWLEVPNChangeRequest"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="product-group">
+        <h2><span class="product-dot de"></span> DE</h2>
+        <ul>
+          <li data-product-type="DENewProvide" class="product-button">
+            <h1 id="DENewProvide-qty" class="table-qty"></h1>
+            <h2 class="product">New Provide</h2>
+            <div class="color-bar DENewProvide"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="all-products" style="display:none;">
+        <h2>ALL<br />PRODUCT<br />TYPES</h2>
+      </div>
+    </div>
+    <div class="channel-stats"></div>
+    <div id="orderSummaryBox" class="order-summary" style="display:none;"></div>
+    <div id="regionStatsBox" class="region-stats padded">
+      <h1 class="float-left">Regions</h1>
+      <button class="button all-regions" style="display:none;">
+        All regions
+      </button>
+      <ul class="region-list">
+        <li class="region-button" data-region="Americas">
+          <span class="table-qty" id="Americas-qty"></span> Americas
+        </li>
+        <li class="region-button" data-region="Asia Pacific">
+          <span class="table-qty" id="AsiaPacific-qty"></span> Asia Pacific
+        </li>
+        <li class="region-button" data-region="Middle East & Africa">
+          <span class="table-qty" id="MiddleEastAfrica-qty"></span> Middle East
+          & Africa
+        </li>
+        <li class="region-button" data-region="Northern Europe">
+          <span class="table-qty" id="NorthernEurope-qty"></span> Northern
+          Europe
+        </li>
+        <li class="region-button" data-region="Central Europe">
+          <span class="table-qty" id="CentralEurope-qty"></span> Central Europe
+        </li>
+        <li class="region-button" data-region="Southern Europe">
+          <span class="table-qty" id="SouthernEurope-qty"></span> Southern
+          Europe
+        </li>
+        <li id="other-button" class="region-button" data-region="Other">
+          <span class="table-qty" id="Other-qty"></span> Other
+          <i class="info fas fa-question-circle"></i>
+        </li>
+      </ul>
+    </div>
+    <div id="world-map" style="width:100%;height:100vh;"></div>
+    <div class="date-section">
+      <div class="date-slider">
+        <input
+          type="text"
+          class="js-range-slider"
+          name="my_range"
+          value=""
+          style="display: none;"
+        />
+      </div>
+      <div class="date-buttons">
+        <button class="button" data-period="month">This month</button>
+        <button class="button" data-period="year">This year</button>
+        <button class="button" data-period="all">All time</button>
+      </div>
+    </div>
+    <div class="summary-stats">
+      <div class="button ghost map" id="trendsButton">
+        Trends <i id="trendsButton" class="far fa-chart-bar"></i>
+      </div>
+      <h1></h1>
+      <p></p>
+    </div>
+    <div class="chart-container">
+      <canvas id="chart"></canvas>
+    </div>
+    <div class="search-container" style="display:none;">
+      <input id="searchInput" type="number" onclick="this.select()" />
+      <div class="id-search-container">
+        <div id="idSearchResult"></div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="javascript/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="javascript/jquery.SPServices.min.js"></script>
+    <script src="javascript/jvectormap.js"></script>
+    <script src="javascript/jvectormap-world.js"></script>
+    <script src="javascript/jvectormap-uk.js"></script>
+
+    <script>
+      var VGEregions = {
+        Americas: [
+          ["America Fixed", ""],
+          ["Anguilla", ""],
+          ["Antigua And Barbuda", ""],
+          ["Argentina", "AR"],
+          ["Aruba", ""],
+          ["Bahamas", "BS"],
+          ["Barbados", ""],
+          ["Belize", "BZ"],
+          ["Bermuda", ""],
+          ["Bolivia", "BO"],
+          ["Brazil", "BR"],
+          ["British Virgin Islands", ""],
+          ["Canada", "CA"],
+          ["Caribbean", ""],
+          ["Cayman Islands", ""],
+          ["Chile", "CL"],
+          ["Colombia", "CO"],
+          ["Costa Rica", "CR"],
+          ["Cuba", "CU"],
+          ["Dominica", ""],
+          ["Dominican Republic", "DO"],
+          ["Ecuador", "EC"],
+          ["El Salvador", "SV"],
+          ["Falkland Islands (Malvinas)", "FK"],
+          ["French Guiana", ""],
+          ["Greenland", "GL"],
+          ["Grenada", ""],
+          ["Guadeloupe", ""],
+          ["Guam", ""],
+          ["Guatemala", "GT"],
+          ["Guyana", "GY"],
+          ["Haiti", "HT"],
+          ["Honduras", "HN"],
+          ["Jamaica", "JM"],
+          ["Martinique", ""],
+          ["Mexico", "MX"],
+          ["Montserrat", ""],
+          ["Netherlands Antilles", ""],
+          ["Nicaragua", "NI"],
+          ["Panama", "PA"],
+          ["Paraguay", "PY"],
+          ["Peru", "PE"],
+          ["Puerto Rico", "PR"],
+          ["Saint Barthélemy", ""],
+          ["Saint Helena, Ascension And Tristan Da Cunha", ""],
+          ["Saint Kitts And Nevis", ""],
+          ["Saint Lucia", ""],
+          ["Saint Martin", ""],
+          ["Saint Pierre And Miquelon", ""],
+          ["Saint Vincent And The Grenadines", ""],
+          ["South Georgia And The South Sandwich Islands", ""],
+          ["Suriname", "SR"],
+          ["Trinidad And Tobago", "TT"],
+          ["Turks And Caicos Islands", ""],
+          ["U.S. Virgin Islands", ""],
+          ["United States", "US"],
+          ["United States Minor Outlying Islands", ""],
+          ["Uruguay", "UY"],
+          ["Venezuela", "VE"]
+        ],
+        "Asia Pacific": [
+          ["Afghanistan", "AF"],
+          ["American Samoa", ""],
+          ["Asia Fixed", ""],
+          ["Australia", "AU"],
+          ["Bangladesh", "BD"],
+          ["Bhutan", "BT"],
+          ["British Indian Ocean Territory", ""],
+          ["Brunei", "BN"],
+          ["Cambodia", "KH"],
+          ["China", "CN"],
+          ["Christmas Island", ""],
+          ["Cocos (Keeling) Islands", ""],
+          ["Cook Islands", ""],
+          ["East Timor", "TL"],
+          ["Fiji", "FJ"],
+          ["French Polynesia", ""],
+          ["Heard Island And Mcdonald Islands", ""],
+          ["Hong Kong", ""],
+          ["India", "IN"],
+          ["Indonesia", "ID"],
+          ["Japan", "JP"],
+          ["Kazakhstan", "KZ"],
+          ["Kiribati", ""],
+          ["Kyrgyzstan", "KG"],
+          ["Laos", "LA"],
+          ["Macao", ""],
+          ["Malaysia", "MY"],
+          ["Maldives", ""],
+          ["Marshall Islands", ""],
+          ["Micronesia, Federated States Of", ""],
+          ["Mongolia", "MN"],
+          ["Myanmar", "MM"],
+          ["Nauru", ""],
+          ["Nepal", "NP"],
+          ["New Caledonia", "NC"],
+          ["New Zealand", "NZ"],
+          ["Niue", ""],
+          ["Norfolk Island", ""],
+          ["North Korea", "KP"],
+          ["Northern Mariana Islands", ""],
+          ["Overseas", ""],
+          ["Pakistan", "PK"],
+          ["Palau", ""],
+          ["Papua New Guinea", "PG"],
+          ["Philippines", "PH"],
+          ["Pitcairn", ""],
+          ["Samoa", ""],
+          ["Singapore", ""],
+          ["Solomon Islands", "SB"],
+          ["South Korea", "KR"],
+          ["Sri Lanka", "LK"],
+          ["Taiwan", "TW"],
+          ["Tajikistan", "TJ"],
+          ["Thailand", "TH"],
+          ["Tokelau", ""],
+          ["Tonga", ""],
+          ["Turkmenistan", "TM"],
+          ["Tuvalu", ""],
+          ["Uzbekistan", "UZ"],
+          ["Vanuatu", "VU"],
+          ["Vietnam", "VN"],
+          ["Wallis And Futuna", ""]
+        ],
+        "Central Europe": [
+          ["Armenia", "AM"],
+          ["Austria", "AT"],
+          ["Azerbaijan", "AZ"],
+          ["Belarus", "BY"],
+          ["Bosnia and Herzegovina", "BA"],
+          ["Bulgaria", "BG"],
+          ["Croatia", "HR"],
+          ["Czech Republic", "CZ"],
+          ["Estonia", "EE"],
+          ["Georgia", "GE"],
+          ["Germany", "DE"],
+          ["Hungary", "HU"],
+          ["Kosovo", "XK"],
+          ["Latvia", "LV"],
+          ["Liechtenstein", ""],
+          ["Lithuania", "LT"],
+          ["Republic of North Macedonia", "MK"],
+          ["Moldova", "MD"],
+          ["Montenegro", "ME"],
+          ["Poland", "PL"],
+          ["Romania", "RO"],
+          ["Russian Federation", "RU"],
+          ["Serbia", "RS"],
+          ["Slovakia", "SK"],
+          ["Slovenia", "SI"],
+          ["Switzerland", "CH"],
+          ["Ukraine", "UA"]
+        ],
+        "Middle East & Africa": [
+          ["Algeria", "DZ"],
+          ["Angola", "AO"],
+          ["Antarctica", ""],
+          ["Bahrain", ""],
+          ["Benin", "BJ"],
+          ["Botswana", "BW"],
+          ["Bouvet Island", ""],
+          ["Burkina Faso", "BF"],
+          ["Burundi", "BI"],
+          ["Cameroon", "CM"],
+          ["Cape Verde", ""],
+          ["Central African Republic", "CF"],
+          ["Chad", "TD"],
+          ["Comoros", ""],
+          ["Congo", "CG"],
+          ["Democratic Republic Of The Congo", "CD"],
+          ["Djibouti", "DJ"],
+          ["Egypt", "EG"],
+          ["Equatorial Guinea", ""],
+          ["Eritrea", "ER"],
+          ["Ethiopia", "ET"],
+          ["French Southern Territories", ""],
+          ["Gabon", "GA"],
+          ["Gambia", "GM"],
+          ["Ghana", "GH"],
+          ["Guinea", "GN"],
+          ["Guinea-Bissau", "GW"],
+          ["Iran", "IR"],
+          ["Iraq", "IQ"],
+          ["Israel", "IL"],
+          ["Ivory Coast", ""],
+          ["Jordan", "JO"],
+          ["Kenya", "KE"],
+          ["Kuwait", "KW"],
+          ["Lebanon", "LB"],
+          ["Lesotho", "LS"],
+          ["Liberia", "LR"],
+          ["Libya", "LY"],
+          ["Madagascar", "MG"],
+          ["Malawi", "MW"],
+          ["Mali", "ML"],
+          ["Mauritania", "MR"],
+          ["Mauritius", ""],
+          ["Mayotte", ""],
+          ["Morocco", "MA"],
+          ["Mozambique", "MZ"],
+          ["Namibia", "NA"],
+          ["Niger", "NE"],
+          ["Nigeria", "NG"],
+          ["Oman", "OM"],
+          ["Palestine", "PS"],
+          ["Qatar", "QA"],
+          ["Reunion", ""],
+          ["Rwanda", "RW"],
+          ["Sao Tome And Principe", ""],
+          ["Saudi Arabia", "SA"],
+          ["Senegal", "SN"],
+          ["Seychelles", ""],
+          ["Sierra Leone", "SL"],
+          ["Somalia", "SO"],
+          ["South Africa", "ZA"],
+          ["Sudan", "SD"],
+          ["Swaziland", "SZ"],
+          ["Syrian Arab Republic", "SY"],
+          ["Tanzania", "TZ"],
+          ["Togo", "TG"],
+          ["Tunisia", "TN"],
+          ["Uganda", "UG"],
+          ["United Arab Emirates", "AE"],
+          ["Vodacom Business Africa", ""],
+          ["Western Sahara", ""],
+          ["Yemen", "YE"],
+          ["Zambia", "ZM"],
+          ["Zimbabwe", "ZW"]
+        ],
+        "Northern Europe": [
+          ["Aland Islands", ""],
+          ["Belgium", "BE"],
+          ["Denmark", "DK"],
+          ["Faroe Islands", ""],
+          ["Finland", "FI"],
+          ["France", "FR"],
+          ["Guernsey", ""],
+          ["Iceland", "IS"],
+          ["Ireland", "IE"],
+          ["Isle of Man", ""],
+          ["Jersey", ""],
+          ["Luxembourg", "LU"],
+          ["Monaco", ""],
+          ["Netherlands", "NL"],
+          ["Norway", "NO"],
+          ["Svalbard And Jan Mayen", ""],
+          ["Sweden", "SE"],
+          ["United Kingdom", "GB"]
+        ],
+        "Southern Europe": [
+          ["Albania", "AL"],
+          ["Andorra", ""],
+          ["Cyprus", "CY"],
+          ["Gibraltar", ""],
+          ["Greece", "GR"],
+          ["Italy", "IT"],
+          ["Malta", ""],
+          ["Portugal", "PT"],
+          ["San Marino", ""],
+          ["Spain", "ES"],
+          ["Turkey", "TR"],
+          ["Vatican", ""]
+        ]
+      };
+
+      var orderSummaryTemplate = _.template(
+        "" +
+          '<i class="fas fa-times-circle" id="close-box"></i><div class="heading"><h2>Order Details for #<%= UID %></h2>' +
+          '<a href="<%= url %>" target="_blank" style="float:right;">DOF Link</a>' +
+          '<h3 style="color:<%= color %>;"><%= Product %></h3></div>' +
+          '<dl class="detail-list">' +
+          "<dt>Parent Company Name</dt>" +
+          "<dd><%= general.Parent_Comp_Name %></dd>" +
+          "<dt>Submission Date</dt>" +
+          "<dd><%= Customer_Submitted %></dd>" +
+          "<dt>Created By</dt>" +
+          "<dd><%= Author.userName %></dd>" +
+          "<dt>Customer Contact Name</dt>" +
+          "<dd><%= general.Cust_Contact_Name %></dd>" +
+          "<dt>Customer Contact Email</dt>" +
+          "<dd><%= general.Cust_Contact_Email %></dd>" +
+          "<dt>Site Address</dt>" +
+          "<dd><%= siteAddress %></dd>" +
+          "</dl>"
+      );
+
+      var otherOrdersTemplate = _.template(
+        "" +
+          '<h2><%=  orders.length  %> orders were classified as "Other" region for the following reasons:</h2>' +
+          '<table class="orderTable"><thead><td>DOF ID</td><td>Reason</td></thead>' +
+          "<tbody>" +
+          "<% _.each(orders, function(order) { %>" +
+          '<tr><td><a href="<%= order.url %>" target="_blank"><%= order.UID %></a></td><td><%= order.otherReason %></td></tr>' +
+          "<% }) %></tbody></table>"
+      );
+
+      //     mapObject.clearSelectedRegions();
+      // map.regions[code].element.config.style.selected.fill = = "#00FF00";
+      // mapObject.setSelectedRegions(code);
+
+      // where code = 'FR', for instance
+
+      // workaround for touchstart in non passive mode
+      // jQuery.event.special.touchstart = {
+      //   setup: function( _, ns, handle ){
+      //     if ( ns.includes("noPreventDefault") ) {
+      //       this.addEventListener("touchstart", handle, { passive: false });
+      //     } else {
+      //       this.addEventListener("touchstart", handle, { passive: true });
+      //     }
+      //   }
+      // };
+
+      var START_DATE = moment("2018-09-19");
+      var END_DATE = moment();
+      var timeRefresh;
+      var currentUser = $().SPServices.SPGetCurrentUser({
+        fieldNames: [
+          "ID",
+          "SipAddress",
+          "Picture",
+          "Title",
+          "EMail",
+          "FirstName",
+          "LastName",
+          "UserName"
+        ],
+        debug: false
+      });
+
+      $().SPServices({
+        operation: "GetGroupCollectionFromUser",
+        userLoginName: $().SPServices.SPGetCurrentUser(),
+        async: false,
+        completefunc: function(xData, Status) {
+          currentUser.groups = _.pluck(
+            $(xData.responseXML)
+              .SPFilterNode("Group")
+              .SPXmlToJson({ mapping: { Name: { mappedName: "Name" } } }),
+            "Name"
+          );
+          currentUser.detailed = _.contains(
+            currentUser.groups,
+            "Detailed Reports"
+          );
+          if (currentUser.detailed) {
+            $(".search-container").show();
+          }
+        }
+      });
+
+      // $().SPServices({
+      //   operation: 'GetUserProfileByName',
+      //   accountName: '44e0fa5364d89f09',
+      //   async: false,
+      //   completefunc: function (xData, Status) {
+      //     var user;
+      //     var results = $(xData.responseXML).SPFilterNode("PropertyData").each(function() {
+      //                     console.log($(this).find("Name").text(), $(this).find("Value").text());
+      //                   }); // end each
+
+      //     console.log(results)
+      //   }
+      // })
+
+      var SPUtil = {
+        getUser: function() {
+          // var dfd = $.Deferred();
+          return $().SPServices.SPGetCurrentUser({
+            fieldNames: [
+              "ID",
+              "SipAddress",
+              "Picture",
+              "Title",
+              "EMail",
+              "FirstName",
+              "LastName",
+              "UserName"
+            ],
+            debug: false
+          });
+
+          // return dfd.promise();
+        },
+        getLinkedListItems: function(list, uid, viewId) {
+          var view = viewId ? viewId : "";
+          // var item = (id) ? id : '';
+          var dfd = $.Deferred();
+          $().SPServices({
+            operation: "GetListItems",
+            async: false,
+            listName: list,
+            viewName: view,
+            // id: uid,
+            CAMLQuery:
+              "<Query><Where><Eq><FieldRef Name='UID'/><Value Type='Text'>" +
+              uid +
+              "</Value></Eq></Where></Query>",
+            CAMLQueryOptions:
+              "<QueryOptions><ExpandUserField>True</ExpandUserField></QueryOptions>",
+
+            completefunc: function(xData, Status) {
+              dfd.resolve(
+                $(xData.responseXML)
+                  .SPFilterNode("z:row")
+                  .SPXmlToJson({
+                    mapping: {
+                      // ows_Created: {mappedName: "Created", objectType: "DateTime"},
+                      ows_Author: { mappedName: "Author", objectType: "User" },
+                      ows_Editor: { mappedName: "Editor", objectType: "User" }
+                    },
+                    includeAllAttrs: true
+                  })
+              );
+            }
+          });
+          return dfd.promise();
+        },
+        getLinkedListIDs: function(list, uid, viewId) {
+          var view = viewId ? viewId : "";
+          // var item = (id) ? id : '';
+          var dfd = $.Deferred();
+          $().SPServices({
+            operation: "GetListItems",
+            async: false,
+            listName: list,
+            viewName: view,
+            // id: uid,
+            CAMLQuery:
+              "<Query><Where><Eq><FieldRef Name='UID'/><Value Type='Text'>" +
+              uid +
+              "</Value></Eq></Where></Query>",
+            CAMLQueryOptions:
+              "<QueryOptions><ExpandUserField>True</ExpandUserField></QueryOptions>",
+
+            completefunc: function(xData, Status) {
+              var results = $(xData.responseXML)
+                .SPFilterNode("z:row")
+                .SPXmlToJson({
+                  mapping: {
+                    // ows_Created: {mappedName: "Created", objectType: "DateTime"},
+                    ows_Author: { mappedName: "Author", objectType: "User" },
+                    ows_Editor: { mappedName: "Editor", objectType: "User" }
+                    // ows_UniqueId: {mappedName: "UniqueId", objectType: "Lookup"}
+                  },
+                  includeAllAttrs: true
+                });
+              // console.log('results', results)
+              results = _.pluck(results, "ID");
+              dfd.resolve(results);
+            }
+          });
+          return dfd.promise();
+        },
+        getCompletedListItems: function(list, viewId, id) {
+          var view = viewId ? viewId : "";
+          var item = id ? id : "";
+          var dfd = $.Deferred();
+          $().SPServices({
+            operation: "GetListItems",
+            async: false,
+            listName: list,
+            viewName: view,
+            id: item,
+            CAMLQuery:
+              "<Query><Where><IsNotNull><FieldRef Name='Robot_Complete' /></IsNotNull></Where></Query>",
+            CAMLQueryOptions:
+              "<QueryOptions><ExpandUserField>True</ExpandUserField></QueryOptions>",
+            completefunc: function(xData, Status) {
+              var results = _.filter(
+                $(xData.responseXML)
+                  .SPFilterNode("z:row")
+                  .SPXmlToJson({
+                    mapping: {
+                      // ows_Created: {mappedName: "Created", objectType: "DateTime"},
+                      // ows_Author: {mappedName: "Author", objectType: "User"},
+                      // ows_Editor: {mappedName: "Editor", objectType: "User"},
+                      // ows_UniqueId: {mappedName: "UniqueId", objectType: "Lookup"}
+                    },
+                    includeAllAttrs: true
+                  }),
+                function(item) {
+                  return (
+                    moment(item.Customer_Submitted).isAfter(START_DATE) &&
+                    moment(item.Robot_Complete).isAfter(START_DATE)
+                  );
+                }
+              );
+              dfd.resolve(results);
+            }
+          });
+          return dfd.promise();
+        },
+        getListItems: function(list, viewId, id) {
+          var view = viewId ? viewId : "";
+          var item = id ? id : "";
+          var dfd = $.Deferred();
+          $().SPServices({
+            operation: "GetListItems",
+            async: false,
+            listName: list,
+            viewName: view,
+            id: item,
+
+            completefunc: function(xData, Status) {
+              dfd.resolve(
+                $(xData.responseXML)
+                  .SPFilterNode("z:row")
+                  .SPXmlToJson({
+                    mapping: {
+                      ows_Created: {
+                        mappedName: "Created",
+                        objectType: "DateTime"
+                      },
+                      ows_Author: { mappedName: "Author", objectType: "User" },
+                      ows_Editor: { mappedName: "Editor", objectType: "User" },
+                      ows_UniqueId: {
+                        mappedName: "UniqueId",
+                        objectType: "Lookup"
+                      }
+                    },
+                    includeAllAttrs: true
+                  })
+              );
+            }
+          });
+          return dfd.promise();
+        },
+        getListItem: function(list, id, viewId) {
+          var view = viewId ? viewId : "";
+          var dfd = $.Deferred();
+          $().SPServices({
+            operation: "GetListItems",
+            async: false,
+            listName: list,
+            viewName: view,
+            CAMLQuery:
+              "<Query><Where><Eq><FieldRef Name='ID'/><Value Type='Counter'>" +
+              id +
+              "</Value></Eq></Where></Query>",
+            CAMLQueryOptions:
+              "<QueryOptions><ExpandUserField>True</ExpandUserField></QueryOptions>",
+            completefunc: function(xData, Status) {
+              dfd.resolve(
+                $(xData.responseXML)
+                  .SPFilterNode("z:row")
+                  .SPXmlToJson({
+                    mapping: {
+                      // ows_Created: {mappedName: "Created", objectType: "DateTime"},
+                      ows_Author: { mappedName: "Author", objectType: "User" },
+                      ows_Editor: { mappedName: "Editor", objectType: "User" }
+                    },
+                    includeAllAttrs: true
+                  })
+              );
+            }
+          });
+          return dfd.promise();
+        },
+        updateListItems: function(list, valuePairs, id) {
+          var command = id ? "Update" : "New";
+          var dfd = $.Deferred();
+          $().SPServices({
+            operation: "UpdateListItems",
+            async: false,
+            ID: id,
+            batchCmd: command,
+            listName: list,
+            valuepairs: valuePairs,
+            completefunc: function(xData, Status) {
+              if (Status !== "success") {
+                dfd.reject(xData);
+              }
+              var errorCode = $(xData.responseText)
+                .find("ErrorText")
+                .text();
+              if (errorCode) {
+                console.error("The following error occurred: " + errorCode);
+                return;
+              } else {
+                dfd.resolve(xData);
+              }
+            }
+          });
+          return dfd.promise();
+        }
+      };
+
+      $(function() {
+        var ck_lat = /^(-?[1-8]?\d(?:\.\d{1,18})?|90(?:\.0{1,18})?)$/;
+        var ck_lon = /^(-?(?:1[0-7]|[1-9])?\d(?:\.\d{1,18})?|180(?:\.0{1,18})?)$/;
+
+        function cleanString(string) {
+          return string.replace(/[^A-Z0-9]+/gi, "");
+        }
+
+        function delay(callback, ms) {
+          var timer = 0;
+          return function() {
+            var context = this,
+              args = arguments;
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+              callback.apply(context, args);
+            }, ms || 0);
+          };
+        }
+
+        function check_lat_lon(lat, lon) {
+          var validLat = ck_lat.test(lat);
+          var validLon = ck_lon.test(lon);
+          if (validLat && validLon) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        function getProductColor(product) {
+          switch (product) {
+            case "IP-VPN Change Request":
+            case "IP-VPN New Provide":
+            case "IP-VPN Cease":
+              return "#9C2AA0";
+              break;
+            case "DIA New Provide":
+            case "DIA Change Request":
+              return "#A8B400";
+              break;
+            case "EWL/EVPN New Provide":
+            case "EWL/EVPN Change Request":
+              return "#EB9700";
+              break;
+            case "DE New Provide":
+              return "#FECB00";
+              break;
+          }
+        }
+
+        function getDOFUrl(id, product) {
+          var formName;
+          try {
+            switch (product) {
+              case "Cloud Connect New Provide":
+                formName = "CloudConnect";
+                break;
+              case "DE New Provide":
+                formName = "DedicatedEthernet";
+                break;
+              case "DIA Change Request":
+                formName = "DIA-Change";
+                break;
+              case "DIA New Provide":
+                formName = "DIA";
+                break;
+              case "GTES Pathway Self Service":
+                formName = "GTESPathwaySS";
+                break;
+              case "IP-VPN Cease":
+                formName = "IPVPN-Cease";
+                break;
+              case "IP-VPN Change Request":
+                formName = "IPVPN-Change";
+                break;
+              case "IP-VPN New Provide":
+                formName = "IPVPN-New";
+                break;
+              case "IP-VPN Soft":
+                formName = "IPVPN-Soft";
+                break;
+              case "SDN New Provide":
+                formName = "SDN-New";
+                break;
+              case "EWL/EVPN Change Request":
+                formName = "EWL-EVPN-Change";
+                break;
+              case "EWL/EVPN New Provide":
+                formName = "EWL-EVPN-New";
+                break;
+            }
+            return (
+              "https://workspace2.vodafone.com/Group/GTES/SitePages/OrderCaptureForm/forms/" +
+              formName +
+              ".html?id=" +
+              id
+            );
+          } catch (e) {}
+        }
+
+        var orderData = function() {
+          var allOrders = [];
+          var sites = [];
+          var dateRange = {
+            min: null,
+            max: null
+          };
+          var filters = {
+            minDate: START_DATE,
+            maxDate: END_DATE,
+            channel: "All",
+            regions: [],
+            products: []
+          };
+
+          var enabledProducts = [
+            "IP-VPN New Provide",
+            "IP-VPN Change Request",
+            "DIA New Provide",
+            "DIA Change Request",
+            "EWL/EVPN Change Request",
+            "DE New Provide"
+          ];
+
+          var getOrderSalesChannel = function(order) {
+            switch (filters.channel) {
+              case "Global":
+                return order.channel == "Global";
+                break;
+              case "UK":
+                return order.channel == "UK";
+                break;
+              default:
+                return true;
+            }
+          };
+
+          var filterRegions = function(order) {
+            if (filters.regions.length) {
+              return _.contains(filters.regions, order.region);
+            } else {
+              return true;
+            }
+          };
+
+          var filterProducts = function(order) {
+            if (filters.products.length) {
+              return _.contains(filters.products, cleanString(order.Product));
+            } else {
+              return true;
+            }
+          };
+
+          var setMaxMin = function() {
+            dateRange.min = _.min(
+              _.map(allOrders, function(order) {
+                return moment(order.Customer_Submitted);
+              })
+            );
+            dateRange.max = _.max(
+              _.map(allOrders, function(order) {
+                return moment(order.Customer_Submitted);
+              })
+            );
+            filters.minDate = dateRange.min;
+          };
+
+          var getOrders = function() {
+            // console.log(dates)
+            // var parent = this;
+            return _.chain(allOrders)
+              .filter(function(order) {
+                return (
+                  moment(order.Customer_Submitted).isAfter(
+                    moment(filters.minDate)
+                  ) &&
+                  moment(order.Customer_Submitted).isBefore(
+                    moment(filters.maxDate)
+                  )
+                );
+              })
+              .filter(getOrderSalesChannel.bind(this))
+              .filter(filterRegions)
+              .filter(filterProducts)
+              .value();
+          };
+
+          var addGeneral = function(general, item) {
+            return _.extend(item, {
+              general: _.findWhere(general, { ID: item.UID }),
+              url: getDOFUrl(item.UID, item.Product)
+            });
+          };
+
+          var addSites = function(sites, item) {
+            var newOrder = _.extend(item, {
+              sites: _.where(sites, { UID: item.UID })
+            });
+            var channel = _.every(newOrder.sites, function(site) {
+              return (
+                site.Site_Address &&
+                site.Site_Address.indexOf("United Kingdom") > -1
+              );
+            })
+              ? "UK"
+              : "Global";
+
+            return _.extend(newOrder, { channel: channel });
+          };
+
+          var addMapData = function(order) {
+            var mapSites = [];
+            _.each(order.sites, function(site) {
+              if (
+                site.Site_Address &&
+                site.Site_Address.split(";").length > 5
+              ) {
+                var coordinates = site.Site_Address.split(";")[5].split(",");
+                if (
+                  coordinates.length == 2 &&
+                  check_lat_lon(coordinates[0], coordinates[1])
+                ) {
+                  var color = getProductColor(site.Product);
+                  mapSites.push({
+                    id: site.UID,
+                    siteID: site.ID,
+                    date: new Date(order.Customer_Submitted),
+                    Site_Address: site.Site_Address,
+                    latLng: [
+                      parseFloat(coordinates[0]),
+                      parseFloat(coordinates[1])
+                    ],
+                    url: getDOFUrl(site.UID, site.Product),
+                    style: { fill: color },
+                    product: site.Product,
+                    channel: order.channel
+                  });
+                }
+              }
+            });
+
+            return _.extend(order, { mapData: mapSites });
+          };
+
+          var addRegion = function(order) {
+            var region, country;
+            var otherReason = "";
+
+            if (order.sites.length) {
+              try {
+                country = order.sites[0].Site_Address.split(";")[3] || "Other";
+                if (country == "Other") {
+                  otherReason =
+                    "Cannot find valid country in correct format: <strong>" +
+                    order.sites[0].Site_Address +
+                    "</strong>. ";
+                }
+                region =
+                  _.findKey(VGEregions, function(r) {
+                    return _.contains(_.flatten(r), country);
+                  }) || "Other";
+                if (region == "Other" && country != "Other") {
+                  otherReason +=
+                    'Cannot match country "<strong>' +
+                    country +
+                    '</strong>" to a Vodafone region. ';
+                }
+              } catch (err) {
+                region = "Other";
+                otherReason += "Error while trying to match address to region.";
+              }
+            } else {
+              region = "Other";
+              otherReason = "Order contains no sites.";
+            }
+
+            return _.extend(order, {
+              region: region,
+              otherReason: otherReason
+            });
+          };
+
+          var getMonths = function(startDate, stopDate) {
+            var dateArray = [];
+            var currentDate = moment(startDate);
+            var stopDate = moment(stopDate);
+            while (currentDate <= stopDate) {
+              dateArray.push(moment(currentDate).format("MMM YYYY"));
+              currentDate = moment(currentDate).add(1, "months");
+            }
+            return dateArray;
+          };
+
+          var separateMonths = function(productData, key) {
+            var monthArray = _.object(
+              _.map(getMonths(filters.minDate, filters.maxDate), function(
+                item
+              ) {
+                return [item, 0];
+              })
+            );
+
+            return _.extendOwn(
+              monthArray,
+              _.groupBy(productData, function(order) {
+                return moment(order.Customer_Submitted).format("MMM YYYY");
+              })
+            );
+          };
+
+          return {
+            allOrders: allOrders,
+            filters: filters,
+            dateRange: function() {
+              return dateRange;
+            },
+            getOrderById: function(id) {
+              return _.findWhere(allOrders, { UID: id });
+            },
+            getOrdersByRegion: function() {
+              return _.groupBy(getOrders(), "region");
+            },
+            getOrdersByProduct: function() {
+              return _.groupBy(getOrders(), "Product");
+            },
+            getOrdersByMonth: function() {
+              var results = [];
+              _.each(
+                _.groupBy(getOrders(), function(order) {
+                  return moment(order.Customer_Submitted).format("MMM YYYY");
+                }),
+                function(value, key) {
+                  results.push({ t: moment(key).valueOf(), y: value.length });
+                }
+              );
+              return results;
+            },
+            getOrdersByMonthAndProduct: function() {
+              return _.chain(getOrders())
+                .groupBy("Product")
+                .mapObject(separateMonths)
+                .value();
+            },
+            getSites: function() {
+              return _.flatten(_.pluck(getOrders(), "mapData"));
+            },
+            load: function() {
+              var dfd = $.Deferred();
+              var defers = [];
+
+              defers.push(
+                SPUtil.getListItems("tblDOFGeneral").then(function(data) {
+                  dfd.notify("General information loaded");
+                  console.log("got general");
+                  return { general: data };
+                })
+              );
+
+              defers.push(
+                SPUtil.getListItems("tblDOFSite").then(function(data) {
+                  dfd.notify("Sites loaded");
+                  console.log("got site");
+                  return { site: data };
+                })
+              );
+
+              defers.push(
+                SPUtil.getListItems("tblDOFMilestones").then(function(data) {
+                  dfd.notify("Milestones loaded");
+                  console.log("got milestones");
+                  return { milestones: data };
+                })
+              );
+
+              $.when.apply($, defers).done(function(data) {
+                var allData = _.reduce(
+                  [].concat.apply([], [].slice.call(arguments)),
+                  function(memo, num) {
+                    return _.extend(num, memo);
+                  },
+                  {}
+                );
+                allOrders = _.chain(allData.milestones)
+                  .filter(function(milestone) {
+                    return !_.isEmpty(milestone.Customer_Submitted);
+                  })
+                  .map(addGeneral.bind(this, allData.general))
+                  .map(addSites.bind(this, allData.site))
+                  .map(addRegion)
+                  .map(addMapData)
+                  .filter(function(order) {
+                    return !(
+                      order.general &&
+                      order.general.Parent_Comp_Name &&
+                      order.general.Parent_Comp_Name.toLowerCase().indexOf(
+                        "spyder"
+                      ) > -1
+                    );
+                  })
+                  .filter(function(order) {
+                    return _.contains(enabledProducts, order.Product);
+                  })
+                  .value();
+
+                // console.log(parent.allOrders)
+
+                setMaxMin();
+                dfd.resolve();
+              });
+              return dfd.promise();
+            }
+          };
+        };
+
+        // Data is loaded and formatted. Now the fun begins.
+
+        var dd = orderData();
+        var percent = 0;
+
+        setTimeout(function() {
+          dd.load()
+            .progress(function(data) {
+              // console.log(data, percent)
+              percent += 33;
+              // $('#loadProgress').text(percent + '% complete');
+            })
+            .done(function() {
+              timeRefresh = moment();
+              $("#lastRefreshTime").text(timeRefresh.fromNow());
+              setInterval(function() {
+                $("#lastRefreshTime").text(timeRefresh.fromNow());
+              }, 60 * 1000);
+
+              var monthData = dd.getOrdersByMonth();
+              // var monthData = dd.getOrdersByMonthAndProduct()
+
+              console.log(dd.getOrdersByProduct());
+
+              var selectMarker = function(event, index, zoom) {
+                var sites = dd.getSites();
+                var orderDetails = dd.getOrderById(sites[index].id);
+                orderDetails.color = sites[index].style.fill;
+                orderDetails.url = sites[index].url;
+                // console.log(sites[index])
+                orderDetails.siteAddress = sites[index].Site_Address;
+
+                // console.log(orderDetails)
+
+                $("#searchInput").val(orderDetails.UID);
+
+                mapObject.markers[index].element.config.style.selected.fill =
+                  sites[index].style.fill;
+                mapObject.markers[index].element.config.style.selected.r = 10;
+                mapObject.clearSelectedMarkers();
+                mapObject.setSelectedMarkers(index);
+
+                $("#orderSummaryBox").html(orderSummaryTemplate(orderDetails));
+                $("#orderSummaryBox").fadeIn();
+
+                $("#close-box").click(function() {
+                  $("#orderSummaryBox").fadeOut();
+                  mapObject.clearSelectedMarkers();
+                });
+
+                // console.log(sites[index])
+
+                if (zoom) {
+                  setFocusLatLng(
+                    8,
+                    sites[index].latLng[0],
+                    sites[index].latLng[1]
+                  );
+                }
+              };
+
+              var ctx = document.getElementById("chart").getContext("2d");
+              // ctx.canvas.width = 1000;
+              // ctx.canvas.height = 300;
+              // var color = Chart.helpers.color;
+              var cfg = {
+                type: "bar",
+                data: {
+                  labels: [],
+                  datasets: [
+                    {
+                      label: "IP-VPN New Provide",
+                      stack: "IP",
+                      data: [],
+                      hidden: true,
+                      backgroundColor: "rgba(96,11,99,0.8)",
+                      borderWidth: 1,
+                      borderColor: "rgba(96,11,99,1)"
+                    },
+                    {
+                      label: "IP-VPN Change Request",
+                      stack: "IP",
+                      data: [],
+                      hidden: true,
+                      backgroundColor: "rgba(156,42,160,0.8)",
+                      borderWidth: 1,
+                      borderColor: "rgba(156,42,160,1)"
+                    },
+                    {
+                      label: "DIA New Provide",
+                      stack: "DIA",
+                      data: [],
+                      hidden: true,
+                      backgroundColor: "rgba(106,113,8,0.8)",
+                      borderWidth: 1,
+                      borderColor: "rgba(106,113,8,1)"
+                    },
+                    {
+                      label: "DIA Change Request",
+                      stack: "DIA",
+                      data: [],
+                      hidden: true,
+                      backgroundColor: "rgba(168,180,0,0.8)",
+                      borderWidth: 1,
+                      borderColor: "rgba(168,180,0,1)"
+                    },
+                    {
+                      label: "EWL/EVPN Change Request",
+                      stack: "EWL",
+                      data: [],
+                      hidden: true,
+                      backgroundColor: "rgba(235,151,0,0.8)",
+                      borderWidth: 1,
+                      borderColor: "rgba(235,151,0,1)"
+                    },
+                    {
+                      label: "DE New Provide",
+                      stack: "DE",
+                      data: [],
+                      hidden: true,
+                      backgroundColor: "rgba(254,203,0,0.8)",
+                      borderWidth: 1,
+                      borderColor: "rgba(254,203,0,1)"
+                    }
+                  ]
+                },
+                options: {
+                  maintainAspectRatio: false,
+                  responsive: true,
+                  legend: {
+                    display: false,
+                    labels: {
+                      fontColor: "#eee"
+                    }
+                  },
+                  scales: {
+                    xAxes: [
+                      {
+                        barPercentage: 0.95,
+                        position: "left",
+                        stacked: true,
+                        ticks: {
+                          fontColor: "#eee"
+                        }
+                      }
+                    ],
+                    yAxes: [
+                      {
+                        stacked: true,
+                        scaleLabel: {
+                          display: true,
+                          labelString: "Number of orders",
+                          fontColor: "#eee"
+                        },
+                        ticks: {
+                          fontColor: "#eee",
+                          beginAtZero: true,
+                          min: 0,
+                          callback: function(value, index, values) {
+                            if (Math.floor(value) === value) {
+                              return value;
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  tooltips: {
+                    intersect: false,
+                    mode: "index",
+                    callbacks: {
+                      title: function(tooltipItem, data) {
+                        return moment(tooltipItem[0].xLabel, "MMM YY").format(
+                          "MMMM YYYY"
+                        );
+                      },
+                      label: function(tooltipItem, myData) {
+                        var label =
+                          myData.datasets[tooltipItem.datasetIndex].label || "";
+                        if (label) {
+                          label += ": ";
+                        }
+                        label += tooltipItem.yLabel;
+                        return label;
+                      }
+                    }
+                  }
+                }
+              };
+
+              var chart = new Chart(ctx, cfg);
+
+              var mapObject = new jvm.Map({
+                container: $("#world-map"),
+                map: "world_mill",
+                normalizeFunction: "polynomial",
+                markerStyle: {
+                  initial: {
+                    fill: "rgb(230,0,0)",
+                    stroke: "rgb(0,0,0)",
+                    "stroke-opacity": 0.3
+                  },
+                  selected: { "stroke-width": 10, "fill-opacity": 1 }
+                },
+                backgroundColor: "rgba(0,0,0,0)",
+                regionStyle: {
+                  initial: {
+                    fill: "rgba(230,230,230,0.8)",
+                    stroke: "none",
+                    "stroke-width": 0,
+                    "stroke-opacity": 1
+                  },
+                  hover: { cursor: "pointer" },
+                  selected: {
+                    fill: "#24B9C0",
+                    stroke: "rgba(0,0,0,0.2)",
+                    "stroke-width": 1.8,
+                    "stroke-opacity": 0.8
+                  }
+                },
+                series: { markers: [] },
+                zoomButtons: false,
+                zoomMin: 0.6,
+                focusOn: {
+                  x: 0.5,
+                  y: 0.5,
+                  scale: 0.6
+                },
+                onMarkerClick: function(event, index) {
+                  if (currentUser.detailed) {
+                    selectMarker(event, index);
+                  }
+                  // window.open(sites[index].url);
+                },
+                onMarkerTipShow: function(event, label, index) {
+                  var sites = dd.getSites();
+
+                  if (currentUser.detailed) {
+                    label.html(
+                      "<b>" +
+                        sites[index].id +
+                        "</b><br/>" +
+                        "<b>Product: </b>" +
+                        sites[index].product +
+                        "</br>"
+                    );
+                  } else {
+                    label.html(
+                      "<b>Product: </b>" + sites[index].product + "</br>"
+                    );
+                  }
+                }
+                // onViewportChange: function(event, scaleFactor){
+                //   console.log(event, scaleFactor)
+                //   var map = $("#world-map").vectorMap("get", "mapObject");
+                //   if(map) {
+                //     var markers = map.markers,
+                //         min = 5,
+                //         max = 18,
+                //         r = ~~Math.min(Math.max(min * scaleFactor, min), max);
+                //     for(var m in markers) {
+                //       var el = markers[m].element,
+                //           style = el.config.style;
+                //       el.shape.node.setAttribute('r', r);
+                //       style.initial.r = r;
+                //       style.hover.r = r;
+                //     }
+                //   }
+                // }
+                // onMarkerClick: function(event, index) {
+                //     window.location = latLongMarkers[index].weburl;
+                // }
+              });
+
+              function setFocusLatLng(scale, lat, lng) {
+                var mapObj = $("#world-map").vectorMap("get", "mapObject");
+
+                var config = {
+                  animate: true,
+                  lat: lat,
+                  lng: lng,
+                  scale: scale
+                };
+
+                mapObj.setFocus(config);
+              }
+
+              var updateView = function() {
+                updateTable();
+                updateMap();
+                updateChart();
+
+                // mapObject.regions['GB'].element.config.style.selected.fill = "#00FF00";
+                // mapObject.setSelectedRegions(_.without(_.map(VGEregions["Middle East & Africa"], function(data) { return data[1] }), ""));
+                // mapObject.setSelectedRegions(_.without(_.map(VGEregions["Middle East & Africa"], function(data) { return data[1] }), ""));
+                // mapObject.setSelectedRegions(_.without(_.map(VGEregions["Americas"], function(data) { return data[1] }), ""));
+                // mapObject.setSelectedRegions(_.without(_.map(VGEregions["Middle East & Africa"], function(data) { return data[1] }), ""));
+
+                // console.log(dd.getOrdersByProduct())
+              };
+
+              var enumerateDaysBetweenDates = function(startDate, endDate) {
+                var now = startDate.clone(),
+                  dates = [];
+
+                while (now.isSameOrBefore(endDate)) {
+                  dates.push(now.format("MMM YY"));
+                  now.add(1, "months");
+                }
+                return dates;
+              };
+
+              var updateChart = function() {
+                var productData = dd.getOrdersByMonthAndProduct();
+
+                chart.data.labels = enumerateDaysBetweenDates(
+                  dd.filters.minDate,
+                  dd.filters.maxDate
+                );
+
+                // console.log(productData)
+
+                var datasets = [];
+
+                _.each(productData, function(months, key) {
+                  // var data = _.map(months, function(value, key) { return {t: moment(key).valueOf(), y: value.length || 0}})
+                  var data = _.map(months, function(value, key) {
+                    return value.length || 0;
+                  });
+                  datasets.push({
+                    data: data,
+                    label: key
+                  });
+                  // console.log(item, key)
+                });
+
+                // console.log(datasets)
+
+                // while (chart.data.datasets.length) {
+                //   chart.data.datasets.pop();
+                // }
+
+                // console.log(dd.filters.products)
+
+                if (dd.filters.products.length) {
+                  _.each(chart.data.datasets, function(dataset, i) {
+                    chart.data.datasets[i].hidden = true;
+                  });
+                  _.each(dd.filters.products, function(product) {
+                    var indChart = _.indexOf(
+                      _.map(chart.data.datasets, function(item) {
+                        return cleanString(item.label);
+                      }),
+                      product
+                    );
+                    // var indDataSet = _.indexOf(_.map(datasets, function(item) {return cleanString(item.label)}), product);
+                    chart.data.datasets[indChart].hidden = false;
+                    // chart.data.datasets[indChart].data = datasets[indDataSet];
+                  });
+                } else {
+                  _.each(chart.data.datasets, function(dataset, i) {
+                    chart.data.datasets[i].hidden = false;
+                  });
+                }
+
+                // console.log(datasets)
+
+                _.each(chart.data.datasets, function(dataset, i) {
+                  var ind = _.indexOf(
+                    _.map(datasets, function(item) {
+                      return item.label;
+                    }),
+                    dataset.label
+                  );
+                  // console.log(dataset, ind, i)
+                  if (ind > -1) {
+                    chart.data.datasets[i].data = datasets[ind].data;
+                  } else {
+                    chart.data.datasets[i].data = [];
+                  }
+                });
+
+                console.log(chart.data);
+
+                // chart.data.datasets = datasets;
+                // chart.options.scales.xAxes[0].time.min = moment(dd.filters.minDate).subtract(1, 'months');
+                // chart.options.scales.xAxes[0].time.max = dd.filters.maxDate;
+
+                // setTimeout(function() {
+                chart.update();
+                // }, 100);
+              };
+
+              var updateTable = function() {
+                var orderStats = dd.getOrdersByProduct();
+                // console.log('TCL: updateTable -> dd.getOrdersByProduct()', dd.getOrdersByProduct())
+                var regionStats = dd.getOrdersByRegion();
+                // console.log('TCL: updateTable -> dd.getOrdersByRegion()', dd.getOrdersByRegion())
+                $(".table-qty").html("0");
+                if ($(".product-stats.selection").length) {
+                  $(".product-stats .table-qty").html("+");
+                  $(".product-stats .active > .table-qty").html("0");
+                }
+
+                _.each(orderStats, function(item, key) {
+                  if ($("#" + cleanString(key) + "-qty").length) {
+                    $("#" + cleanString(key) + "-qty").html(item.length);
+                  }
+                });
+
+                _.each(regionStats, function(item, key) {
+                  if ($("#" + cleanString(key) + "-qty").length) {
+                    $("#" + cleanString(key) + "-qty").html(item.length);
+                  }
+                });
+
+                if (!$(".region-list").hasClass("selection")) {
+                  if (!regionStats.Other || !regionStats.Other.length) {
+                    $("#other-button").hide();
+                  } else {
+                    $("#other-button").show();
+                  }
+                }
+              };
+
+              var updateMap = function(data) {
+                mapObject.removeAllMarkers();
+                mapObject.addMarkers(dd.getSites(data), []);
+                mapObject.clearSelectedRegions();
+
+                _.each(dd.filters.regions, function(val) {
+                  mapObject.setSelectedRegions(
+                    _.without(
+                      _.map(VGEregions[val], function(data) {
+                        return data[1];
+                      }),
+                      ""
+                    )
+                  );
+                });
+
+                // console.log(mapObject)
+              };
+
+              $(".js-range-slider").ionRangeSlider({
+                type: "double",
+                skin: "round",
+                min: dd.dateRange().min.format("x"),
+                max: moment().format("x"),
+                from: dd.dateRange().min.format("x"),
+                to: END_DATE.format("x"),
+                grid: true,
+                values_separator: " – ",
+                prettify: function(num) {
+                  return moment(num).format("D MMM YYYY");
+                },
+                onFinish: function(data) {
+                  // console.log(data)
+                  dd.filters.minDate = moment(data.from);
+                  dd.filters.maxDate = moment(data.to);
+                  $(".date-buttons .button").removeClass("active");
+                  updateView();
+                }
+              });
+
+              var dateRange = $(".js-range-slider").data("ionRangeSlider");
+
+              var updateDateSlider = function(data) {
+                dateRange.update({
+                  from: data.from.format("x"),
+                  to: data.to.format("x")
+                });
+                dd.filters.minDate = data.from;
+                dd.filters.maxDate = data.to;
+                // updateMap(data);
+              };
+
+              // $('#update').click(function() {
+              //   dateRange.update({
+              //     from: moment().startOf('month'),
+              //     to: moment()
+              //   });
+              // })
+
+              $("#trendsButton").click(function() {
+                if ($(this).hasClass("map")) {
+                  $(".product-stats").addClass("trends");
+                  $(this).html('Map <i class="fas fa-globe-europe"></i>');
+                  $(this).removeClass("map");
+                } else {
+                  $(".product-stats").removeClass("trends");
+                  $(this).html(
+                    'Trends <i id="trendsButton" class="far fa-chart-bar"></i>'
+                  );
+                  $(this).addClass("map");
+                }
+
+                $("#world-map").toggleClass("inset");
+                $(".chart-container").slideToggle();
+                // $('#page-title').toggleClass('settings');
+              });
+
+              $("#refreshButton").click(function() {
+                $(this).addClass("loading");
+                setTimeout(function() {
+                  dd.load().done(function() {
+                    $("#refreshButton").removeClass("loading");
+                    timeRefresh = moment();
+                    updateView();
+                    $("#lastRefreshTime").text(timeRefresh.fromNow());
+                  });
+                }, 10);
+              });
+
+              $(".date-buttons .button").click(function() {
+                // console.log($(this))
+                $(".date-buttons .button").removeClass("active");
+                $(this).addClass("active");
+                switch ($(this).data("period")) {
+                  case "year":
+                    updateDateSlider({
+                      from: moment().startOf("year"),
+                      to: moment()
+                    });
+                    break;
+                  case "month":
+                    updateDateSlider({
+                      from: moment().startOf("month"),
+                      to: moment()
+                    });
+                    break;
+                  case "all":
+                    updateDateSlider({
+                      from: dd.dateRange().min,
+                      to: moment()
+                    });
+                    break;
+                }
+                updateView();
+              });
+
+              $(".region-list li").click(function() {
+                // console.log(dd.filters.regions)
+                // $('.date-buttons .button').removeClass('active')
+                $(this).toggleClass("active");
+                $(".all-regions").fadeIn();
+                if (!_.contains(dd.filters.regions, $(this).data("region"))) {
+                  dd.filters.regions.push($(this).data("region"));
+                } else {
+                  dd.filters.regions = _.without(
+                    dd.filters.regions,
+                    $(this).data("region")
+                  );
+                }
+
+                if (!dd.filters.regions.length) {
+                  $(".region-list").removeClass("selection");
+                  $(".all-regions").fadeOut();
+                } else {
+                  $(".region-list").addClass("selection");
+                }
+                updateView();
+              });
+
+              $(".product-stats li").click(function() {
+                // console.log(dd.filters.regions)
+                // $('.date-buttons .button').removeClass('active')
+                $(this).toggleClass("active");
+                $(".all-products").fadeIn();
+                if (
+                  !_.contains(dd.filters.products, $(this).data("productType"))
+                ) {
+                  dd.filters.products.push($(this).data("productType"));
+                } else {
+                  dd.filters.products = _.without(
+                    dd.filters.products,
+                    $(this).data("productType")
+                  );
+                }
+
+                if (!dd.filters.products.length) {
+                  $(".product-stats").removeClass("selection");
+                  $(".all-products").fadeOut();
+                } else {
+                  $(".product-stats").addClass("selection");
+                }
+                updateView();
+              });
+
+              $("#searchInput").keydown(function(e) {
+                $("#idSearchResult")
+                  .html("")
+                  .removeClass("show");
+              });
+
+              $("#searchInput").keyup(
+                delay(function(e) {
+                  if (this.value.length) {
+                    $(".search-container").addClass("hideicon");
+                  } else {
+                    $(".search-container").removeClass("hideicon");
+                  }
+
+                  var found = _.findIndex(dd.getSites(), { id: this.value });
+
+                  if (found > -1) {
+                    $("#idSearchResult").html("");
+                    selectMarker(e, found, true);
+                  } else if (this.value.length) {
+                    $("#idSearchResult")
+                      .html("Order not found")
+                      .addClass("show");
+                  } else {
+                    $("#idSearchResult")
+                      .html("")
+                      .removeClass("show");
+                  }
+                }, 1000)
+              );
+
+              $("#other-button .info").click(function(e) {
+                e.stopPropagation();
+                $("#lightboxTitle").text('"Other" Region Orders');
+                // console.log(dd.getOrdersByRegion().Other)
+                $("#lightboxBody").html(
+                  otherOrdersTemplate({ orders: dd.getOrdersByRegion().Other })
+                );
+                $("#shadowbox").fadeIn();
+                $("#lightbox").fadeIn();
+                $("#lightbox").addClass("animate");
+
+                $("#closelightbox").click(function() {
+                  $("#lightbox").fadeOut();
+                  $("#lightbox").removeClass("animate");
+                  $("#shadowbox").fadeOut();
+                });
+              });
+
+              $(".all-regions").click(function() {
+                $(this).hide();
+                $(".region-list li").removeClass("active");
+                $(".region-list").removeClass("selection");
+                dd.filters.regions = [];
+                updateView();
+              });
+
+              $(".all-products").click(function() {
+                $(this).hide();
+                $(".product-stats li").removeClass("active");
+                $(".product-stats").removeClass("selection");
+                dd.filters.products = [];
+                updateView();
+              });
+
+              $(".channel-toggle li").click(function() {
+                // console.log($(this))
+                $(".channel-toggle li").removeClass("active");
+                $(this).addClass("active");
+
+                if ($(this).text() == "UK" && dd.filters.channel != "UK") {
+                  dd.filters.channel = $(this).text();
+                  mapObject.removeAllMarkers();
+                  mapObject.setFocus({ region: "GB", animate: true });
+                } else if (
+                  $(this).text() == "Global" &&
+                  dd.filters.channel != "Global"
+                ) {
+                  dd.filters.channel = $(this).text();
+                  mapObject.removeAllMarkers();
+                  mapObject.setFocus({
+                    scale: 0.6,
+                    x: 0.5,
+                    y: 0.5,
+                    animate: true
+                  });
+                } else if (
+                  $(this).text() == "All" &&
+                  dd.filters.channel != "All"
+                ) {
+                  dd.filters.channel = $(this).text();
+                  mapObject.removeAllMarkers();
+                  mapObject.setFocus({
+                    scale: 0.6,
+                    x: 0.5,
+                    y: 0.5,
+                    animate: true
+                  });
+                }
+
+                setTimeout(function() {
+                  updateView();
+                }, 500);
+
+                // updateView();
+                // console.log(dd)
+              });
+
+              // $('.jvectormap-container').mousemove(function(e) {
+              //   e.preventDefault();
+              //   var mapDimensions = {
+              //     height: $('.jvectormap-container').outerHeight(),
+              //     width: $('.jvectormap-container').outerWidth()
+              //   };
+
+              //   var mousePosition = {
+              //     x: mapDimensions.width / -2 + e.originalEvent.clientX,
+              //     y: mapDimensions.height / -2 + e.originalEvent.clientY
+              //   }
+              //   $(this).css('transform', 'translate3d(' + mousePosition.x * -0.01 + 'px,' + mousePosition.y * 0.01 + 'px,0px)')
+              // })
+
+              // console.log(dd.getSitesByProduct())
+              // console.log(dd.getOrdersByProduct())
+
+              updateView();
+              setTimeout(function() {
+                $("#shadowbox").html("");
+                $("#shadowbox").fadeOut();
+              }, 100);
+            });
+        }, 0);
+
+        // orderData().load().then(function() {
+        //   console.log(orderData.data())
+        //   var data = orderData.rawData;
+        //   var allData = _.reduce(data, function(memo, num) { return _.extend(num, memo); }, {})
+        //   var finalData = _.map(allData.general, function(item) {
+        //     return _.extend(item, {sites: _.where(allData.site, {UID: item.ID})});
+        //   });
+
+        //   // ",2 TAI SENG AVENUE;Southeast;Mei Hwan;Singapore;534408;1.337683,103.890664"
+        //   _.each(finalData, function(data) {
+        //     return _.each(data.sites, function(site) {
+        //       console.log('site', site.ID, site.UID)
+        //       if (site.Site_Address && site.Site_Address.split(';').length > 5) {
+        //         console.log(site.Site_Address.split(';')[5])
+        //         return site.Site_Address.split(';')[5]
+        //       };
+        //     })
+        //   });
+        // });
+      });
+    </script>
+  </body>
+</html>
